@@ -2821,6 +2821,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
 
+var dbUrl = "/db";
+
 var Login = function Login(_ref) {
     _objectDestructuringEmpty(_ref);
 
@@ -2830,17 +2832,15 @@ var Login = function Login(_ref) {
     var handleSubmit = function handleSubmit(e) {
         e.preventDefault();
         if (username.value.length > 0 && password.value.length > 0) {
-            console.log("Username: " + username.value);
-            console.log("Password: " + password.value);
-            //   axios.post(dbUrl + '/login', {
-            //     email: input.username,
-            //     password: input.password
-            //   }).then(function(response) {
-            //       console.log("logged in!");
-            //   }).catch(function(error) {
-            //     console.log(error);
-            //   });
-            //
+            _axios2.default.get(dbUrl + '/login', {
+                email: username.value,
+                password: password.value
+            }).then(function (response) {
+                console.log("logged in!");
+            }).catch(function (error) {
+                console.log(error);
+            });
+
             username.value = '';
             password.value = '';
         }

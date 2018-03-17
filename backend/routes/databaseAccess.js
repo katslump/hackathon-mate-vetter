@@ -14,9 +14,11 @@ let Idea = require('../models/Idea.js');
 
 // Check if user is in system, if so login
 app.get('/login', (req, res) => {
-  User.find().catch(error => {
+    console.log("got to login");
+  User.find({email: req.body.email, password: req.body.password}).catch(error => {
     res.send(error);
   }).then(response => {
+      console.log("user exists!");
     res.send({user: response});
   })
 });

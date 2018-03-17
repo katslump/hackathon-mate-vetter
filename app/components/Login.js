@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+const dbUrl = "/db";
 
 let Login = ({}) => {
     let username;
@@ -8,17 +9,15 @@ let Login = ({}) => {
     let handleSubmit = (e) => {
         e.preventDefault();
         if (username.value.length > 0 && password.value.length > 0) {
-            console.log("Username: " + username.value);
-            console.log("Password: " + password.value);
-            //   axios.post(dbUrl + '/login', {
-            //     email: input.username,
-            //     password: input.password
-            //   }).then(function(response) {
-            //       console.log("logged in!");
-            //   }).catch(function(error) {
-            //     console.log(error);
-            //   });
-            //
+            axios.get(dbUrl + '/login', {
+                email: username.value,
+                password: password.value
+            }).then(function(response) {
+                console.log("logged in!");
+            }).catch(function(error) {
+                console.log(error);
+            });
+
             username.value = '';
             password.value = '';
         }
