@@ -17,10 +17,8 @@ export default class IdeaInput extends React.Component {
     handleInputChange(event)  {
         const state = this.state;
         state[event.target.name] = event.target.value;
-        console.log(this.state);
         this.setState(state);
     }
-
 
     handleSubmit(e) {
         e.preventDefault();
@@ -45,11 +43,9 @@ export default class IdeaInput extends React.Component {
                 hashtags: state.hashtags,
                 skills: state.skills
             });
-            console.log("Idea added!");
         }).catch(function(error) {
             console.log(error);
         });
-
 
     }
 

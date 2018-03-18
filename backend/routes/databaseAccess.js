@@ -14,21 +14,23 @@ let Idea = require('../models/Idea.js');
 
 // Check if user is in system, if so login
 app.get('/login', (req, res) => {
-    console.log("got to login");
   User.find({email: req.body.email, password: req.body.password}).catch(error => {
     res.send(error);
   }).then(response => {
-      console.log("user exists!");
     res.send({user: response});
   })
 });
 
 // Pull all ideas from database
 app.get('/ideas', (req, res) => {
-  Idea.find().catch(error => {
+  Idea.find({}, function(err, ideas) {
+      let ideaList = [];
+      ideas.forEach(function(idea) {
+          ideaList.push(idea);
+      })
+      res.send({ideas: ideaList});
+  }).catch(error => {
     res.send(error);
-  }).then(response => {
-    res.send({ideas: response});
   })
 });
 

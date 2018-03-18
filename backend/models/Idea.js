@@ -14,6 +14,9 @@ const ideaSchema = new mongoose.Schema({
     },
     owner: {
         type: String
+    },
+    favorites: {
+        type: Number
     }
 });
 

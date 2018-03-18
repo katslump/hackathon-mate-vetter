@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,100,300');
+@import url(https://fonts.googleapis.com/css?family=Lato);
 
 body {
     background: #222D32;
@@ -9,10 +10,22 @@ body {
     display: none;
 }
 
+ul {
+    display: inline;
+}
+
 .login-box {
     margin-top: 75px;
     height: auto;
     background: #1A2226;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.idea-box {
+    margin-top: 10px;
+    height: auto;
+    background: #EDEDED;
     text-align: center;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
@@ -131,3 +144,183 @@ label {
 .loginbttm {
     padding: 0px;
 }
+
+.twitter-card{
+  font-family: Helvetica, Arial, san-serif;
+  display: flex;
+  border: 1px solid #ccc;
+  max-width: 500px;
+  background: #fff;
+  padding: 15px;
+  font-size: 12px;
+  text-decoration: none;
+}
+.twitter-card-image{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.twitter-content-image{
+  width: 100%;
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.twitter-card-name{
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+.twitter-card-info{
+  text-decoration: none;
+  color: grey;
+}
+
+.twitter-card-tweet{
+  margin-bottom: 5px;
+  color: black;
+}
+
+.twitter-card-content{
+  color: grey;
+}
+
+.twitter-card-hashtag{
+  color: DodgerBlue;
+  text-decoration: none;
+}
+
+.twitter-card-translate{
+  text-decoration: none;
+  color: grey;
+}
+
+.twitter-card-icon{
+  font-size: 16px;
+  text-decoration: none;
+  color: grey;
+  font-weight: bold;
+  position: absolute;
+  right: 25px;
+  padding: 0 5px;
+}
+
+
+	.profile-card{
+		width: 300px;
+		border-radius: 2px;
+		overflow: hidden;
+		box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+		position: relative;
+		margin: auto;
+		background: rgba(255,255,255,1);
+		top: 50%;
+		transform: translateY(-10%);
+	}
+
+	.profile-card header{
+		display: block;
+		position: relative;
+		background: rgba(255,255,255,1);
+		text-align: center;
+		padding: 30px 0 20px;
+		z-index: 1;
+		overflow: hidden;
+	}
+
+	.profile-card header:before{
+		content: "";
+		background: url('http://ali.shahab.pk/blur.php?img=http://ali.shahab.pk/ali-shahab.jpg&x=60') no-repeat;
+		background-size: cover;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		z-index: -1;
+
+	}
+
+	.profile-card header:after{
+		content: "";
+		bottom: -1px;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		background-image: linear-gradient(
+		    to bottom,
+		    rgba(255, 255, 255, 0) 0%,
+		    rgba(255, 255, 255, 1) 100%
+		);
+	}
+
+	.profile-card header img{
+		border-radius: 100%;
+		overflow: hidden;
+		width: 150px;
+		/*border: 1px solid rgba(255,255,255,.5);*/
+		box-shadow: 0 1px 0 rgba(0,0,0,.1),0 1px 2px rgba(0,0,0,.1);
+	}
+
+	.profile-card header h1{
+		font-weight: 200;
+		font-size: 42px;
+		color: #444;
+		letter-spacing: -3px;
+		margin: 0;
+		padding: 0;
+	}
+
+	.profile-card header h2{
+		font-weight: 400;
+		font-size: 14px;
+		color: #666;
+		letter-spacing: .5px;
+		margin: 0;
+		padding: 0;
+	}
+
+	.profile-card .profile-bio{
+		padding: 0 30px;
+		text-align: center;
+		color: #888;
+	}
+
+	.profile-card .profile-social-links{
+		display: table;
+		width: 70%;
+		margin: 20px auto;
+	}
+
+	.profile-card .profile-social-links li{
+		display: table-cell;
+		width: 33.3333333333333333%
+	}
+
+	.profile-card .profile-social-links li a{
+		display: block;
+		text-align: center;
+		padding: 10px;
+		margin: 0 10px;
+		border-radius: 100%;
+		-webkit-transition: box-shadow 0.2s;
+		-moz-transition: box-shadow 0.2s;
+		-o-transition: box-shadow 0.2s;
+		transition: box-shadow 0.2s;
+	}
+	.profile-card .profile-social-links li a:hover{
+		box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12),0 1px 1px 0 rgba(0,0,0,.24);
+	}
+
+	.profile-card .profile-social-links li a:active{
+		box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2);
+	}
+
+	.profile-card .profile-social-links li a img{
+		width: 100%;
+		display: block;
+	}

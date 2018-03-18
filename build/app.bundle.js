@@ -627,6 +627,12 @@ module.exports = emptyFunction;
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__(24);
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -648,7 +654,7 @@ module.exports = emptyObject;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -743,12 +749,6 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(24);
 
 /***/ }),
 /* 7 */
@@ -1627,72 +1627,69 @@ module.exports = checkPropTypes;
 
 /***/ }),
 /* 22 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Login__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Signup__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__IdeaTimeline__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__IdeaInput__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_axios__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__MiniProfile__ = __webpack_require__(46);
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(2);
 
-var _react2 = _interopRequireDefault(_react);
 
-var _Login = __webpack_require__(45);
+const dbUrl = "/db";
 
-var _Login2 = _interopRequireDefault(_Login);
 
-var _Signup = __webpack_require__(47);
-
-var _Signup2 = _interopRequireDefault(_Signup);
-
-var _IdeaTimeline = __webpack_require__(44);
-
-var _IdeaTimeline2 = _interopRequireDefault(_IdeaTimeline);
-
-var _MiniProfile = __webpack_require__(46);
-
-var _MiniProfile2 = _interopRequireDefault(_MiniProfile);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var App = function (_React$Component) {
-  _inherits(App, _React$Component);
-
-  function App() {
-    _classCallCheck(this, App);
-
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
-  }
-
-  _createClass(App, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { className: 'container' },
-        _react2.default.createElement(_IdeaTimeline2.default, null),
-        _react2.default.createElement(_MiniProfile2.default, null)
-      );
+class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+    constructor(props) {
+        super(props);
     }
-  }]);
+    componentWillMount() {}
+    render() {
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'container' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__IdeaInput__["a" /* default */], null),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__IdeaTimeline__["a" /* default */], null),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Login__["a" /* default */], null),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Signup__["a" /* default */], null),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__MiniProfile__["a" /* default */], null),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'row' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-lg-3 col-md-2' }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'col-lg-12 login-form' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'col-lg-12 ' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-lg-6 login-text' }),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { className: 'col-lg-6 login-button' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'button',
+                                { type: 'submit', className: 'btn btn-outline-primary' },
+                                'LOGOUT'
+                            )
+                        )
+                    )
+                )
+            )
+        );
+    }
+};
 
-  return App;
-}(_react2.default.Component);
-
-;
-
-exports.default = App;
+/* harmony default export */ __webpack_exports__["a"] = (App);
 
 /***/ }),
 /* 23 */
@@ -2597,595 +2594,557 @@ module.exports = function spread(callback) {
 
 /***/ }),
 /* 41 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_App__ = __webpack_require__(22);
 
 
-var _react = __webpack_require__(2);
 
-var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(23);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _App = __webpack_require__(22);
-
-var _App2 = _interopRequireDefault(_App);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('root'));
+__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_App__["a" /* default */], null), document.getElementById('root'));
 
 /***/ }),
 /* 42 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
+class Idea extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+  componentWillMount() {
+    console.log(this.props.idea);
+  }
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(2);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Idea = function (_React$Component) {
-    _inherits(Idea, _React$Component);
-
-    function Idea() {
-        _classCallCheck(this, Idea);
-
-        return _possibleConstructorReturn(this, (Idea.__proto__ || Object.getPrototypeOf(Idea)).apply(this, arguments));
-    }
-
-    _createClass(Idea, [{
-        key: "render",
-        value: function render() {
-            return _react2.default.createElement(
-                "div",
-                { style: { display: "inline-flex" } },
-                "this is an idea"
-            );
-        }
-    }]);
-
-    return Idea;
-}(_react2.default.Component);
-
+  render() {
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      "li",
+      { className: "idea-box" },
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "div",
+        { className: "twitter-card" },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { className: "twitter-card-image", src: "http://heykatslump.com/wp-content/uploads/2017/12/12243275_10207729298613386_8562939135850164950_n-1.jpg" }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "div",
+          { className: "twitter-card-content" },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "a",
+            { className: "twitter-card-name", href: "#", target: "_blank" },
+            "Kat Slump"
+          ),
+          "@katslumps",
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "a",
+            { className: "twitter-card-info", href: "#", target: "_blank" },
+            "Jan 21"
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "div",
+            { className: "twitter-card-tweet" },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "a",
+              { className: "twitter-card-hashtag", href: "#", target: "_blank" },
+              "#es6 #javascript #react #utility"
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "div",
+            { className: "twitter-card-icons" },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "a",
+              { href: "#", className: "twitter-card-icon" },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-heart-o" }),
+              "3"
+            )
+          )
+        )
+      )
+    );
+  }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = Idea;
 ;
-
-exports.default = Idea;
 
 /***/ }),
 /* 43 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
+const dbUrl = "/db";
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(2);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _axios = __webpack_require__(6);
-
-var _axios2 = _interopRequireDefault(_axios);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var dbUrl = "/db";
-
-var IdeaInput = function (_React$Component) {
-    _inherits(IdeaInput, _React$Component);
-
-    function IdeaInput(props) {
-        _classCallCheck(this, IdeaInput);
-
-        var _this = _possibleConstructorReturn(this, (IdeaInput.__proto__ || Object.getPrototypeOf(IdeaInput)).call(this, props));
-
-        _this.state = {
+class IdeaInput extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
             ideas: [],
             name: '',
             description: '',
             hashtags: '',
             skills: ''
         };
-        return _this;
     }
 
-    _createClass(IdeaInput, [{
-        key: 'handleInputChange',
-        value: function handleInputChange(event) {
-            var state = this.state;
-            state[event.target.name] = event.target.value;
-            console.log(this.state);
-            this.setState(state);
-        }
-    }, {
-        key: 'handleSubmit',
-        value: function handleSubmit(e) {
-            e.preventDefault();
+    handleInputChange(event) {
+        const state = this.state;
+        state[event.target.name] = event.target.value;
+        this.setState(state);
+    }
 
-            var self = this;
-            var state = this.state;
+    handleSubmit(e) {
+        e.preventDefault();
 
-            var hashtags = state.hashtags.split(",");
-            var skills = state.skills.split(",");
+        let self = this;
+        const state = this.state;
 
-            _axios2.default.post(dbUrl + '/idea', {
-                name: state.name,
-                description: state.description,
-                hashtags: hashtags,
-                skills: skills
-                // owner: self.state.owner,
-                // team: self.state.team
+        let hashtags = state.hashtags.split(",");
+        let skills = state.skills.split(",");
+
+        __WEBPACK_IMPORTED_MODULE_1_axios___default.a.post(dbUrl + '/idea', {
+            name: state.name,
+            description: state.description,
+            hashtags: hashtags,
+            skills: skills
+            // owner: self.state.owner,
+            // team: self.state.team
+        }).then(function (response) {
+            self.setState = {
+                name: response.data.name,
+                description: response.data.description,
+                hashtags: state.hashtags,
+                skills: state.skills
+            };
+        }).catch(function (error) {
+            console.log(error);
+        });
+    }
+
+    render() {
+        const { name, description, hashtags, skills } = this.state;
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'container' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'row' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-lg-3 col-md-2' }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'col-lg-6 col-md-8 login-box' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'col-lg-12 login-key' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-key', 'aria-hidden': 'true' })
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'col-lg-12 login-title' },
+                        'SUBMIT IDEA'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'col-lg-12 login-form' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { className: 'col-lg-12 login-form' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'form',
+                                { onSubmit: this.handleSubmit.bind(this) },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { className: 'form-group' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'label',
+                                        { className: 'form-control-label' },
+                                        'NAME'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', name: 'name', className: 'form-control', value: name, onChange: this.handleInputChange.bind(this) })
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { className: 'form-group' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'label',
+                                        { className: 'form-control-label' },
+                                        'DESCRIPTION'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', name: 'description', className: 'form-control', value: description, onChange: this.handleInputChange.bind(this) })
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { className: 'form-group' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'label',
+                                        { className: 'form-control-label' },
+                                        'KEYWORD(S)'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', name: 'hashtags', className: 'form-control', value: hashtags, onChange: this.handleInputChange.bind(this) })
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { className: 'form-group' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'label',
+                                        { className: 'form-control-label' },
+                                        'SKILLS'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', name: 'skills', className: 'form-control', value: skills, onChange: this.handleInputChange.bind(this) })
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { className: 'col-lg-12 loginbttm' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-lg-6 login-btm login-text' }),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { className: 'col-lg-6 login-btm login-button' },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'button',
+                                            { type: 'submit', className: 'btn btn-outline-primary' },
+                                            'SUBMIT'
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-lg-3 col-md-2' })
+                )
+            )
+        );
+    }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = IdeaInput;
+;
+
+/***/ }),
+/* 44 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Idea__ = __webpack_require__(42);
+
+
+const dbUrl = "/db";
+
+
+class IdeaTimeline extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            ideas: [{
+                name: "This is an idea",
+                description: "It does this",
+                hashtags: "dog, cat, animals"
+            }]
+        };
+    }
+
+    componentDidMount() {
+        __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get(dbUrl + '/ideas').then(response => {
+            const id = response.data.ideas;
+            this.setState({
+                ideas: id
+            });
+        }).then(() => {
+            setTimeout(function () {
+                console.log(this.state.ideas);
+            }, 5000);
+        }).catch(error => {
+            console.log(error);
+        });
+    }
+
+    render() {
+        let data = this.state.ideas;
+        let listOfIdeas = data.map(idea => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Idea__["a" /* default */], { key: idea.name, idea: idea }));
+
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'container' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'row' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-lg-3 col-md-2' }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'col-lg-6 col-md-8 login-box' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'col-lg-12 login-key' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-key', 'aria-hidden': 'true' })
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'col-lg-12 login-title' },
+                        'IDEAS'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'col-lg-12 login-form' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { className: 'col-lg-12 login-form' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'ul',
+                                null,
+                                listOfIdeas
+                            )
+                        )
+                    )
+                )
+            )
+        );
+    }
+
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = IdeaTimeline;
+;
+
+/***/ }),
+/* 45 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
+
+
+const dbUrl = "/db";
+
+class Login extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            loggedIn: "false",
+            username: '',
+            password: ''
+        };
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        let self = this;
+        const state = this.state;
+
+        if (this.state.username.length > 0) {
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get(dbUrl + '/login', {
+                email: state.username,
+                password: state.password
             }).then(function (response) {
+                console.log("logged in!");
                 self.setState = {
-                    name: response.data.name,
-                    description: response.data.description,
-                    hashtags: state.hashtags,
-                    skills: state.skills
+                    loggedIn: "true"
                 };
             }).catch(function (error) {
+                self.setState = {
+                    loggedIn: "false"
+                };
                 console.log(error);
             });
         }
-    }, {
-        key: 'render',
-        value: function render() {
-            var _state = this.state,
-                name = _state.name,
-                description = _state.description,
-                hashtags = _state.hashtags,
-                skills = _state.skills;
+    }
 
-            return _react2.default.createElement(
+    render() {
+
+        let showHide = {
+            'display': this.state.loggedIn === "false" ? 'block' : 'none'
+        };
+
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'container' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'container' },
-                _react2.default.createElement(
+                { style: showHide },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'row' },
-                    _react2.default.createElement('div', { className: 'col-lg-3 col-md-2' }),
-                    _react2.default.createElement(
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-lg-3 col-md-2' }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
                         { className: 'col-lg-6 col-md-8 login-box' },
-                        _react2.default.createElement(
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'div',
                             { className: 'col-lg-12 login-key' },
-                            _react2.default.createElement('i', { className: 'fa fa-key', 'aria-hidden': 'true' })
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-key', 'aria-hidden': 'true' })
                         ),
-                        _react2.default.createElement(
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'div',
                             { className: 'col-lg-12 login-title' },
-                            'SUBMIT IDEA'
+                            'HACKMATE'
                         ),
-                        _react2.default.createElement(
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'div',
                             { className: 'col-lg-12 login-form' },
-                            _react2.default.createElement(
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
                                 { className: 'col-lg-12 login-form' },
-                                _react2.default.createElement(
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'form',
                                     { onSubmit: this.handleSubmit.bind(this) },
-                                    _react2.default.createElement(
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         'div',
                                         { className: 'form-group' },
-                                        _react2.default.createElement(
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             'label',
                                             { className: 'form-control-label' },
-                                            'NAME'
+                                            'USERNAME'
                                         ),
-                                        _react2.default.createElement('input', { type: 'text', name: 'name', className: 'form-control', value: name, onChange: this.handleInputChange.bind(this) })
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'form-control', id: 'username', onChange: e => this.setState({ description: e.target.username }), value: this.state.username })
                                     ),
-                                    _react2.default.createElement(
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         'div',
                                         { className: 'form-group' },
-                                        _react2.default.createElement(
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             'label',
                                             { className: 'form-control-label' },
-                                            'DESCRIPTION'
+                                            'PASSWORD'
                                         ),
-                                        _react2.default.createElement('input', { type: 'text', name: 'description', className: 'form-control', value: description, onChange: this.handleInputChange.bind(this) })
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'password', className: 'form-control', id: 'password', onChange: e => this.setState({ password: e.target.value }), value: this.state.password })
                                     ),
-                                    _react2.default.createElement(
-                                        'div',
-                                        { className: 'form-group' },
-                                        _react2.default.createElement(
-                                            'label',
-                                            { className: 'form-control-label' },
-                                            'KEYWORD(S)'
-                                        ),
-                                        _react2.default.createElement('input', { type: 'text', name: 'hashtags', className: 'form-control', value: hashtags, onChange: this.handleInputChange.bind(this) })
-                                    ),
-                                    _react2.default.createElement(
-                                        'div',
-                                        { className: 'form-group' },
-                                        _react2.default.createElement(
-                                            'label',
-                                            { className: 'form-control-label' },
-                                            'SKILLS'
-                                        ),
-                                        _react2.default.createElement('input', { type: 'text', name: 'skills', className: 'form-control', value: skills, onChange: this.handleInputChange.bind(this) })
-                                    ),
-                                    _react2.default.createElement(
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         'div',
                                         { className: 'col-lg-12 loginbttm' },
-                                        _react2.default.createElement('div', { className: 'col-lg-6 login-btm login-text' }),
-                                        _react2.default.createElement(
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-lg-6 login-btm login-text' }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             'div',
                                             { className: 'col-lg-6 login-btm login-button' },
-                                            _react2.default.createElement(
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                 'button',
                                                 { type: 'submit', className: 'btn btn-outline-primary' },
-                                                'SUBMIT'
+                                                'LOGIN'
                                             )
                                         )
                                     )
                                 )
                             )
                         ),
-                        _react2.default.createElement('div', { className: 'col-lg-3 col-md-2' })
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-lg-3 col-md-2' })
                     )
                 )
-            );
-        }
-    }]);
-
-    return IdeaInput;
-}(_react2.default.Component);
-
-exports.default = IdeaInput;
-;
-
-/***/ }),
-/* 44 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(2);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _Idea = __webpack_require__(42);
-
-var _Idea2 = _interopRequireDefault(_Idea);
-
-var _IdeaInput = __webpack_require__(43);
-
-var _IdeaInput2 = _interopRequireDefault(_IdeaInput);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var IdeaTimeline = function (_React$Component) {
-    _inherits(IdeaTimeline, _React$Component);
-
-    function IdeaTimeline() {
-        _classCallCheck(this, IdeaTimeline);
-
-        return _possibleConstructorReturn(this, (IdeaTimeline.__proto__ || Object.getPrototypeOf(IdeaTimeline)).apply(this, arguments));
+            )
+        );
     }
+};
 
-    _createClass(IdeaTimeline, [{
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'div',
-                { style: { display: "inline-flex" } },
-                _react2.default.createElement(
-                    'div',
-                    { className: 'timeline' },
-                    _react2.default.createElement(_IdeaInput2.default, null),
-                    _react2.default.createElement(
-                        'ul',
-                        { className: 'timeList' },
-                        _react2.default.createElement(
-                            'li',
-                            null,
-                            'idea'
-                        ),
-                        _react2.default.createElement(_Idea2.default, null)
-                    )
-                )
-            );
-        }
-    }]);
-
-    return IdeaTimeline;
-}(_react2.default.Component);
-
-;
-
-exports.default = IdeaTimeline;
-
-/***/ }),
-/* 45 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(2);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _axios = __webpack_require__(6);
-
-var _axios2 = _interopRequireDefault(_axios);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var dbUrl = "/db";
-
-var Login = function (_React$Component) {
-    _inherits(Login, _React$Component);
-
-    function Login(props) {
-        _classCallCheck(this, Login);
-
-        var _this = _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this, props));
-
-        _this.state = {
-            loggedIn: "false",
-            username: '',
-            password: ''
-        };
-        return _this;
-    }
-
-    _createClass(Login, [{
-        key: 'handleSubmit',
-        value: function handleSubmit(e) {
-            e.preventDefault();
-            var self = this;
-
-            if (this.state.username.length > 0) {
-                _axios2.default.get(dbUrl + '/login', {
-                    email: self.state.username,
-                    password: self.state.password
-                }).then(function (response) {
-                    console.log("logged in!");
-                    self.setState = {
-                        loggedIn: "true"
-                    };
-                }).catch(function (error) {
-                    self.setState = {
-                        loggedIn: "false"
-                    };
-                    console.log(error);
-                });
-            }
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var _this2 = this;
-
-            var showHide = {
-                'display': this.state.loggedIn === "false" ? 'block' : 'none'
-            };
-
-            return _react2.default.createElement(
-                'div',
-                { className: 'container' },
-                _react2.default.createElement(
-                    'div',
-                    { style: showHide },
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'row' },
-                        _react2.default.createElement('div', { className: 'col-lg-3 col-md-2' }),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'col-lg-6 col-md-8 login-box' },
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'col-lg-12 login-key' },
-                                _react2.default.createElement('i', { className: 'fa fa-key', 'aria-hidden': 'true' })
-                            ),
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'col-lg-12 login-title' },
-                                'HACKMATE'
-                            ),
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'col-lg-12 login-form' },
-                                _react2.default.createElement(
-                                    'div',
-                                    { className: 'col-lg-12 login-form' },
-                                    _react2.default.createElement(
-                                        'form',
-                                        { onSubmit: this.handleSubmit.bind(this) },
-                                        _react2.default.createElement(
-                                            'div',
-                                            { className: 'form-group' },
-                                            _react2.default.createElement(
-                                                'label',
-                                                { className: 'form-control-label' },
-                                                'USERNAME'
-                                            ),
-                                            _react2.default.createElement('input', { type: 'text', className: 'form-control', id: 'username', onChange: function onChange(e) {
-                                                    return _this2.setState({ description: e.target.username });
-                                                }, value: this.state.username })
-                                        ),
-                                        _react2.default.createElement(
-                                            'div',
-                                            { className: 'form-group' },
-                                            _react2.default.createElement(
-                                                'label',
-                                                { className: 'form-control-label' },
-                                                'PASSWORD'
-                                            ),
-                                            _react2.default.createElement('input', { type: 'password', className: 'form-control', id: 'password', onChange: function onChange(e) {
-                                                    return _this2.setState({ password: e.target.value });
-                                                }, value: this.state.password })
-                                        ),
-                                        _react2.default.createElement(
-                                            'div',
-                                            { className: 'col-lg-12 loginbttm' },
-                                            _react2.default.createElement('div', { className: 'col-lg-6 login-btm login-text' }),
-                                            _react2.default.createElement(
-                                                'div',
-                                                { className: 'col-lg-6 login-btm login-button' },
-                                                _react2.default.createElement(
-                                                    'button',
-                                                    { type: 'submit', className: 'btn btn-outline-primary' },
-                                                    'LOGIN'
-                                                )
-                                            )
-                                        )
-                                    )
-                                )
-                            ),
-                            _react2.default.createElement('div', { className: 'col-lg-3 col-md-2' })
-                        )
-                    )
-                )
-            );
-        }
-    }]);
-
-    return Login;
-}(_react2.default.Component);
-
-;
-
-exports.default = Login;
+/* harmony default export */ __webpack_exports__["a"] = (Login);
 
 /***/ }),
 /* 46 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(2);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var MiniProfile = function (_React$Component) {
-    _inherits(MiniProfile, _React$Component);
-
-    function MiniProfile() {
-        _classCallCheck(this, MiniProfile);
-
-        return _possibleConstructorReturn(this, (MiniProfile.__proto__ || Object.getPrototypeOf(MiniProfile)).apply(this, arguments));
-    }
-
-    _createClass(MiniProfile, [{
-        key: "render",
-        value: function render() {
-            return _react2.default.createElement(
+class MiniProfile extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+    render() {
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "div",
+            { className: "container" },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 "div",
-                { style: { display: "inline-flex" } },
-                "mini profile"
-            );
-        }
-    }]);
+                { className: "row" },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "col-lg-3 col-md-2" }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    "div",
+                    { className: "col-lg-6 col-md-8 login-box" },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        "div",
+                        { className: "col-lg-12 login-key" },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-key", "aria-hidden": "true" })
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        "div",
+                        { className: "col-lg-12 login-title" },
+                        "PROFILE"
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        "div",
+                        { className: "col-lg-12 login-form" },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "div",
+                            { className: "col-lg-12 login-form" },
+                            "User info",
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "div",
+                                { className: "profile-card" },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "header",
+                                    null,
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "h1",
+                                        null,
+                                        "Kat Slump"
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "h2",
+                                        null,
+                                        "I do this cool stuff"
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "div",
+                                    { className: "profile-bio" },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "p",
+                                        null,
+                                        "Skills: #javascript #react #redux #frontend #design"
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "p",
+                                        null,
+                                        "Interests: fashion | utilities | ideation"
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+        );
+    }
+};
 
-    return MiniProfile;
-}(_react2.default.Component);
-
-;
-
-exports.default = MiniProfile;
+/* harmony default export */ __webpack_exports__["a"] = (MiniProfile);
 
 /***/ }),
 /* 47 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
+const dbUrl = "/db";
 
-var _react = __webpack_require__(2);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _axios = __webpack_require__(6);
-
-var _axios2 = _interopRequireDefault(_axios);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
-
-var dbUrl = "/db";
-
-var Signup = function Signup(_ref) {
-    _objectDestructuringEmpty(_ref);
-
-    var input = {
+let Signup = ({}) => {
+    let input = {
         email: '',
         password: '',
         fname: '',
@@ -3196,10 +3155,10 @@ var Signup = function Signup(_ref) {
         social: []
     };
 
-    var handleSubmit = function handleSubmit(e) {
+    let handleSubmit = e => {
         e.preventDefault();
         if (input) {
-            _axios2.default.post(dbUrl + '/signup', {
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.post(dbUrl + '/signup', {
                 email: input.email.value,
                 password: input.password.value,
                 fname: input.fname.value,
@@ -3227,127 +3186,113 @@ var Signup = function Signup(_ref) {
         }
     };
 
-    return _react2.default.createElement(
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { className: 'container' },
-        _react2.default.createElement(
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'row' },
-            _react2.default.createElement('div', { className: 'col-lg-3 col-md-2' }),
-            _react2.default.createElement(
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-lg-3 col-md-2' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'col-lg-6 col-md-8 login-box' },
-                _react2.default.createElement(
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'col-lg-12 login-key' },
-                    _react2.default.createElement('i', { className: 'fa fa-key', 'aria-hidden': 'true' })
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-key', 'aria-hidden': 'true' })
                 ),
-                _react2.default.createElement(
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'col-lg-12 login-title' },
                     'HACKMATE'
                 ),
-                _react2.default.createElement(
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'col-lg-12 login-form' },
-                    _react2.default.createElement(
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
                         { className: 'col-lg-12 login-form' },
-                        _react2.default.createElement(
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'form',
                             { onSubmit: handleSubmit },
-                            _react2.default.createElement(
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
                                 { className: 'form-group' },
-                                _react2.default.createElement(
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'label',
                                     { className: 'form-control-label' },
                                     'EMAIL'
                                 ),
-                                _react2.default.createElement('input', { type: 'text', className: 'form-control', id: 'signup-username', ref: function ref(text) {
-                                        return input.email = text;
-                                    } })
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'form-control', id: 'signup-username', ref: text => input.email = text })
                             ),
-                            _react2.default.createElement(
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
                                 { className: 'form-group' },
-                                _react2.default.createElement(
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'label',
                                     { className: 'form-control-label' },
                                     'FIRST NAME'
                                 ),
-                                _react2.default.createElement('input', { type: 'text', className: 'form-control', id: 'signup-firstname', ref: function ref(text) {
-                                        return input.fname = text;
-                                    } })
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'form-control', id: 'signup-firstname', ref: text => input.fname = text })
                             ),
-                            _react2.default.createElement(
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
                                 { className: 'form-group' },
-                                _react2.default.createElement(
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'label',
                                     { className: 'form-control-label' },
                                     'LAST NAME'
                                 ),
-                                _react2.default.createElement('input', { type: 'text', className: 'form-control', id: 'signup-lastname', ref: function ref(text) {
-                                        return input.lname = text;
-                                    } })
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'form-control', id: 'signup-lastname', ref: text => input.lname = text })
                             ),
-                            _react2.default.createElement(
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
                                 { className: 'form-group' },
-                                _react2.default.createElement(
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'label',
                                     { className: 'form-control-label' },
                                     'PASSWORD'
                                 ),
-                                _react2.default.createElement('input', { type: 'password', className: 'form-control', id: 'signup-password', ref: function ref(text) {
-                                        return input.password = text;
-                                    } })
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'password', className: 'form-control', id: 'signup-password', ref: text => input.password = text })
                             ),
-                            _react2.default.createElement(
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
                                 { className: 'form-group' },
-                                _react2.default.createElement(
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'label',
                                     { className: 'form-control-label' },
                                     'SHORT BIO'
                                 ),
-                                _react2.default.createElement('input', { type: 'text', className: 'form-control', id: 'signup-bio', ref: function ref(text) {
-                                        return input.bio = text;
-                                    } })
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'form-control', id: 'signup-bio', ref: text => input.bio = text })
                             ),
-                            _react2.default.createElement(
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
                                 { className: 'form-group' },
-                                _react2.default.createElement(
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'label',
                                     { className: 'form-control-label' },
                                     'INTERESTS'
                                 ),
-                                _react2.default.createElement('input', { type: 'text', className: 'form-control', id: 'signup-interests', ref: function ref(text) {
-                                        return input.interests = text;
-                                    } })
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'form-control', id: 'signup-interests', ref: text => input.interests = text })
                             ),
-                            _react2.default.createElement(
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
                                 { className: 'form-group' },
-                                _react2.default.createElement(
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'label',
                                     { className: 'form-control-label' },
                                     'SKILLS'
                                 ),
-                                _react2.default.createElement('input', { type: 'text', className: 'form-control', id: 'signup-skills', ref: function ref(text) {
-                                        return input.skills = text;
-                                    } })
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'form-control', id: 'signup-skills', ref: text => input.skills = text })
                             ),
-                            _react2.default.createElement(
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
                                 { className: 'col-lg-12 loginbttm' },
-                                _react2.default.createElement('div', { className: 'col-lg-6 login-btm login-text' }),
-                                _react2.default.createElement(
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-lg-6 login-btm login-text' }),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'div',
                                     { className: 'col-lg-6 login-btm login-button' },
-                                    _react2.default.createElement(
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         'button',
                                         { type: 'submit', className: 'btn btn-outline-primary' },
                                         'LOGIN'
@@ -3357,13 +3302,13 @@ var Signup = function Signup(_ref) {
                         )
                     )
                 ),
-                _react2.default.createElement('div', { className: 'col-lg-3 col-md-2' })
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-lg-3 col-md-2' })
             )
         )
     );
 };
 
-exports.default = Signup;
+/* harmony default export */ __webpack_exports__["a"] = (Signup);
 
 /***/ }),
 /* 48 */
@@ -3649,14 +3594,14 @@ var React = __webpack_require__(2);
 var invariant = __webpack_require__(8);
 var warning = __webpack_require__(9);
 var ExecutionEnvironment = __webpack_require__(16);
-var _assign = __webpack_require__(5);
+var _assign = __webpack_require__(6);
 var emptyFunction = __webpack_require__(3);
 var EventListener = __webpack_require__(15);
 var getActiveElement = __webpack_require__(19);
 var shallowEqual = __webpack_require__(20);
 var containsNode = __webpack_require__(17);
 var focusNode = __webpack_require__(18);
-var emptyObject = __webpack_require__(4);
+var emptyObject = __webpack_require__(5);
 var checkPropTypes = __webpack_require__(21);
 var hyphenateStyleName = __webpack_require__(51);
 var camelizeStyleName = __webpack_require__(49);
@@ -19042,7 +18987,7 @@ module.exports = reactDom;
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(2),l=__webpack_require__(16),B=__webpack_require__(5),C=__webpack_require__(3),ba=__webpack_require__(15),da=__webpack_require__(19),ea=__webpack_require__(20),fa=__webpack_require__(17),ia=__webpack_require__(18),D=__webpack_require__(4);
+var aa=__webpack_require__(2),l=__webpack_require__(16),B=__webpack_require__(6),C=__webpack_require__(3),ba=__webpack_require__(15),da=__webpack_require__(19),ea=__webpack_require__(20),fa=__webpack_require__(17),ia=__webpack_require__(18),D=__webpack_require__(5);
 function E(a){for(var b=arguments.length-1,c="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,d=0;d<b;d++)c+="\x26args[]\x3d"+encodeURIComponent(arguments[d+1]);b=Error(c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}aa?void 0:E("227");
 var oa={children:!0,dangerouslySetInnerHTML:!0,defaultValue:!0,defaultChecked:!0,innerHTML:!0,suppressContentEditableWarning:!0,suppressHydrationWarning:!0,style:!0};function pa(a,b){return(a&b)===b}
 var ta={MUST_USE_PROPERTY:1,HAS_BOOLEAN_VALUE:4,HAS_NUMERIC_VALUE:8,HAS_POSITIVE_NUMERIC_VALUE:24,HAS_OVERLOADED_BOOLEAN_VALUE:32,HAS_STRING_BOOLEAN_VALUE:64,injectDOMPropertyConfig:function(a){var b=ta,c=a.Properties||{},d=a.DOMAttributeNamespaces||{},e=a.DOMAttributeNames||{};a=a.DOMMutationMethods||{};for(var f in c){ua.hasOwnProperty(f)?E("48",f):void 0;var g=f.toLowerCase(),h=c[f];g={attributeName:g,attributeNamespace:null,propertyName:f,mutationMethod:null,mustUseProperty:pa(h,b.MUST_USE_PROPERTY),
@@ -19283,8 +19228,8 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
 'use strict';
 
-var _assign = __webpack_require__(5);
-var emptyObject = __webpack_require__(4);
+var _assign = __webpack_require__(6);
+var emptyObject = __webpack_require__(5);
 var invariant = __webpack_require__(8);
 var warning = __webpack_require__(9);
 var emptyFunction = __webpack_require__(3);
@@ -20640,7 +20585,7 @@ module.exports = react;
  * LICENSE file in the root directory of this source tree.
  */
 
-var m=__webpack_require__(5),n=__webpack_require__(4),p=__webpack_require__(3),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
+var m=__webpack_require__(6),n=__webpack_require__(5),p=__webpack_require__(3),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
 function y(a){for(var b=arguments.length-1,e="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,c=0;c<b;c++)e+="\x26args[]\x3d"+encodeURIComponent(arguments[c+1]);b=Error(e+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}
 var z={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}};function A(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}A.prototype.isReactComponent={};A.prototype.setState=function(a,b){"object"!==typeof a&&"function"!==typeof a&&null!=a?y("85"):void 0;this.updater.enqueueSetState(this,a,b,"setState")};A.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};
 function B(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}function C(){}C.prototype=A.prototype;var D=B.prototype=new C;D.constructor=B;m(D,A.prototype);D.isPureReactComponent=!0;function E(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}var F=E.prototype=new C;F.constructor=E;m(F,A.prototype);F.unstable_isAsyncReactComponent=!0;F.render=function(){return this.props.children};var G={current:null},H=Object.prototype.hasOwnProperty,I={key:!0,ref:!0,__self:!0,__source:!0};

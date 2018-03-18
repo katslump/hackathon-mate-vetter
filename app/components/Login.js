@@ -16,11 +16,12 @@ class Login extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         let self = this;
+        const state = this.state;
 
         if (this.state.username.length > 0) {
             axios.get(dbUrl + '/login', {
-                email: self.state.username,
-                password: self.state.password
+                email: state.username,
+                password: state.password
             }).then(function(response) {
                 console.log("logged in!");
                 self.setState = ({
@@ -32,7 +33,6 @@ class Login extends React.Component {
                 });
                 console.log(error);
             });
-
         }
     }
 
