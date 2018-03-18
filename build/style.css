@@ -5,6 +5,10 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.hidden {
+    display: none;
+}
+
 .login-box {
     margin-top: 75px;
     height: auto;

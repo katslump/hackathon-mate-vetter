@@ -748,6 +748,12 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__(24);
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
@@ -849,7 +855,7 @@ module.exports = defaults;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -909,7 +915,7 @@ module.exports = invariant;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -976,12 +982,6 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = warning;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(24);
 
 /***/ }),
 /* 10 */
@@ -1573,8 +1573,8 @@ module.exports = shallowEqual;
 
 
 if (process.env.NODE_ENV !== 'production') {
-  var invariant = __webpack_require__(7);
-  var warning = __webpack_require__(8);
+  var invariant = __webpack_require__(8);
+  var warning = __webpack_require__(9);
   var ReactPropTypesSecret = __webpack_require__(55);
   var loggedTypeFailures = {};
 }
@@ -1681,8 +1681,6 @@ var App = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'container' },
-        _react2.default.createElement(_Login2.default, null),
-        _react2.default.createElement(_Signup2.default, null),
         _react2.default.createElement(_IdeaTimeline2.default, null),
         _react2.default.createElement(_MiniProfile2.default, null)
       );
@@ -1752,7 +1750,7 @@ if (process.env.NODE_ENV === 'production') {
 var utils = __webpack_require__(0);
 var bind = __webpack_require__(14);
 var Axios = __webpack_require__(26);
-var defaults = __webpack_require__(6);
+var defaults = __webpack_require__(7);
 
 /**
  * Create an instance of Axios
@@ -1872,7 +1870,7 @@ module.exports = CancelToken;
 "use strict";
 
 
-var defaults = __webpack_require__(6);
+var defaults = __webpack_require__(7);
 var utils = __webpack_require__(0);
 var InterceptorManager = __webpack_require__(27);
 var dispatchRequest = __webpack_require__(28);
@@ -2020,7 +2018,7 @@ module.exports = InterceptorManager;
 var utils = __webpack_require__(0);
 var transformData = __webpack_require__(31);
 var isCancel = __webpack_require__(12);
-var defaults = __webpack_require__(6);
+var defaults = __webpack_require__(7);
 var isAbsoluteURL = __webpack_require__(36);
 var combineURLs = __webpack_require__(34);
 
@@ -2689,6 +2687,10 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _axios = __webpack_require__(6);
+
+var _axios2 = _interopRequireDefault(_axios);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2697,22 +2699,161 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var dbUrl = "/db";
+
 var IdeaInput = function (_React$Component) {
     _inherits(IdeaInput, _React$Component);
 
-    function IdeaInput() {
+    function IdeaInput(props) {
         _classCallCheck(this, IdeaInput);
 
-        return _possibleConstructorReturn(this, (IdeaInput.__proto__ || Object.getPrototypeOf(IdeaInput)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (IdeaInput.__proto__ || Object.getPrototypeOf(IdeaInput)).call(this, props));
+
+        _this.state = {
+            ideas: [],
+            name: '',
+            description: '',
+            hashtags: '',
+            skills: ''
+        };
+        return _this;
     }
 
     _createClass(IdeaInput, [{
-        key: "render",
+        key: 'handleInputChange',
+        value: function handleInputChange(event) {
+            var state = this.state;
+            state[event.target.name] = event.target.value;
+            console.log(this.state);
+            this.setState(state);
+        }
+    }, {
+        key: 'handleSubmit',
+        value: function handleSubmit(e) {
+            e.preventDefault();
+
+            var self = this;
+            var state = this.state;
+
+            var hashtags = state.hashtags.split(",");
+            var skills = state.skills.split(",");
+
+            _axios2.default.post(dbUrl + '/idea', {
+                name: state.name,
+                description: state.description,
+                hashtags: hashtags,
+                skills: skills
+                // owner: self.state.owner,
+                // team: self.state.team
+            }).then(function (response) {
+                self.setState = {
+                    name: response.data.name,
+                    description: response.data.description,
+                    hashtags: state.hashtags,
+                    skills: state.skills
+                };
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
+    }, {
+        key: 'render',
         value: function render() {
+            var _state = this.state,
+                name = _state.name,
+                description = _state.description,
+                hashtags = _state.hashtags,
+                skills = _state.skills;
+
             return _react2.default.createElement(
-                "div",
-                { style: { display: "inline-flex" } },
-                _react2.default.createElement("input", { type: "text" })
+                'div',
+                { className: 'container' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'row' },
+                    _react2.default.createElement('div', { className: 'col-lg-3 col-md-2' }),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'col-lg-6 col-md-8 login-box' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-lg-12 login-key' },
+                            _react2.default.createElement('i', { className: 'fa fa-key', 'aria-hidden': 'true' })
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-lg-12 login-title' },
+                            'SUBMIT IDEA'
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-lg-12 login-form' },
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'col-lg-12 login-form' },
+                                _react2.default.createElement(
+                                    'form',
+                                    { onSubmit: this.handleSubmit.bind(this) },
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'form-group' },
+                                        _react2.default.createElement(
+                                            'label',
+                                            { className: 'form-control-label' },
+                                            'NAME'
+                                        ),
+                                        _react2.default.createElement('input', { type: 'text', name: 'name', className: 'form-control', value: name, onChange: this.handleInputChange.bind(this) })
+                                    ),
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'form-group' },
+                                        _react2.default.createElement(
+                                            'label',
+                                            { className: 'form-control-label' },
+                                            'DESCRIPTION'
+                                        ),
+                                        _react2.default.createElement('input', { type: 'text', name: 'description', className: 'form-control', value: description, onChange: this.handleInputChange.bind(this) })
+                                    ),
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'form-group' },
+                                        _react2.default.createElement(
+                                            'label',
+                                            { className: 'form-control-label' },
+                                            'KEYWORD(S)'
+                                        ),
+                                        _react2.default.createElement('input', { type: 'text', name: 'hashtags', className: 'form-control', value: hashtags, onChange: this.handleInputChange.bind(this) })
+                                    ),
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'form-group' },
+                                        _react2.default.createElement(
+                                            'label',
+                                            { className: 'form-control-label' },
+                                            'SKILLS'
+                                        ),
+                                        _react2.default.createElement('input', { type: 'text', name: 'skills', className: 'form-control', value: skills, onChange: this.handleInputChange.bind(this) })
+                                    ),
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'col-lg-12 loginbttm' },
+                                        _react2.default.createElement('div', { className: 'col-lg-6 login-btm login-text' }),
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'col-lg-6 login-btm login-button' },
+                                            _react2.default.createElement(
+                                                'button',
+                                                { type: 'submit', className: 'btn btn-outline-primary' },
+                                                'SUBMIT'
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        ),
+                        _react2.default.createElement('div', { className: 'col-lg-3 col-md-2' })
+                    )
+                )
             );
         }
     }]);
@@ -2720,9 +2861,8 @@ var IdeaInput = function (_React$Component) {
     return IdeaInput;
 }(_react2.default.Component);
 
-;
-
 exports.default = IdeaInput;
+;
 
 /***/ }),
 /* 44 */
@@ -2809,118 +2949,159 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _axios = __webpack_require__(9);
+var _axios = __webpack_require__(6);
 
 var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var dbUrl = "/db";
 
-var Login = function Login(_ref) {
-    _objectDestructuringEmpty(_ref);
+var Login = function (_React$Component) {
+    _inherits(Login, _React$Component);
 
-    var username = void 0;
-    var password = void 0;
+    function Login(props) {
+        _classCallCheck(this, Login);
 
-    var handleSubmit = function handleSubmit(e) {
-        e.preventDefault();
-        if (username.value.length > 0 && password.value.length > 0) {
-            _axios2.default.get(dbUrl + '/login', {
-                email: username.value,
-                password: password.value
-            }).then(function (response) {
-                console.log("logged in!");
-            }).catch(function (error) {
-                console.log(error);
-            });
+        var _this = _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this, props));
 
-            username.value = '';
-            password.value = '';
+        _this.state = {
+            loggedIn: "false",
+            username: '',
+            password: ''
+        };
+        return _this;
+    }
+
+    _createClass(Login, [{
+        key: 'handleSubmit',
+        value: function handleSubmit(e) {
+            e.preventDefault();
+            var self = this;
+
+            if (this.state.username.length > 0) {
+                _axios2.default.get(dbUrl + '/login', {
+                    email: self.state.username,
+                    password: self.state.password
+                }).then(function (response) {
+                    console.log("logged in!");
+                    self.setState = {
+                        loggedIn: "true"
+                    };
+                }).catch(function (error) {
+                    self.setState = {
+                        loggedIn: "false"
+                    };
+                    console.log(error);
+                });
+            }
         }
-    };
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
 
-    return _react2.default.createElement(
-        'div',
-        { className: 'container' },
-        _react2.default.createElement(
-            'div',
-            { className: 'row' },
-            _react2.default.createElement('div', { className: 'col-lg-3 col-md-2' }),
-            _react2.default.createElement(
+            var showHide = {
+                'display': this.state.loggedIn === "false" ? 'block' : 'none'
+            };
+
+            return _react2.default.createElement(
                 'div',
-                { className: 'col-lg-6 col-md-8 login-box' },
+                { className: 'container' },
                 _react2.default.createElement(
                     'div',
-                    { className: 'col-lg-12 login-key' },
-                    _react2.default.createElement('i', { className: 'fa fa-key', 'aria-hidden': 'true' })
-                ),
-                _react2.default.createElement(
-                    'div',
-                    { className: 'col-lg-12 login-title' },
-                    'HACKMATE'
-                ),
-                _react2.default.createElement(
-                    'div',
-                    { className: 'col-lg-12 login-form' },
+                    { style: showHide },
                     _react2.default.createElement(
                         'div',
-                        { className: 'col-lg-12 login-form' },
+                        { className: 'row' },
+                        _react2.default.createElement('div', { className: 'col-lg-3 col-md-2' }),
                         _react2.default.createElement(
-                            'form',
-                            { onSubmit: handleSubmit },
+                            'div',
+                            { className: 'col-lg-6 col-md-8 login-box' },
                             _react2.default.createElement(
                                 'div',
-                                { className: 'form-group' },
-                                _react2.default.createElement(
-                                    'label',
-                                    { className: 'form-control-label' },
-                                    'USERNAME'
-                                ),
-                                _react2.default.createElement('input', { type: 'text', className: 'form-control', id: 'username', ref: function ref(text) {
-                                        return username = text;
-                                    } })
+                                { className: 'col-lg-12 login-key' },
+                                _react2.default.createElement('i', { className: 'fa fa-key', 'aria-hidden': 'true' })
                             ),
                             _react2.default.createElement(
                                 'div',
-                                { className: 'form-group' },
-                                _react2.default.createElement(
-                                    'label',
-                                    { className: 'form-control-label' },
-                                    'PASSWORD'
-                                ),
-                                _react2.default.createElement('input', { type: 'password', className: 'form-control', id: 'password', ref: function ref(text) {
-                                        return password = text;
-                                    } })
+                                { className: 'col-lg-12 login-title' },
+                                'HACKMATE'
                             ),
                             _react2.default.createElement(
                                 'div',
-                                { className: 'col-lg-12 loginbttm' },
-                                _react2.default.createElement('div', { className: 'col-lg-6 login-btm login-text' }),
+                                { className: 'col-lg-12 login-form' },
                                 _react2.default.createElement(
                                     'div',
-                                    { className: 'col-lg-6 login-btm login-button' },
+                                    { className: 'col-lg-12 login-form' },
                                     _react2.default.createElement(
-                                        'button',
-                                        { type: 'submit', className: 'btn btn-outline-primary' },
-                                        'LOGIN'
+                                        'form',
+                                        { onSubmit: this.handleSubmit.bind(this) },
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'form-group' },
+                                            _react2.default.createElement(
+                                                'label',
+                                                { className: 'form-control-label' },
+                                                'USERNAME'
+                                            ),
+                                            _react2.default.createElement('input', { type: 'text', className: 'form-control', id: 'username', onChange: function onChange(e) {
+                                                    return _this2.setState({ description: e.target.username });
+                                                }, value: this.state.username })
+                                        ),
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'form-group' },
+                                            _react2.default.createElement(
+                                                'label',
+                                                { className: 'form-control-label' },
+                                                'PASSWORD'
+                                            ),
+                                            _react2.default.createElement('input', { type: 'password', className: 'form-control', id: 'password', onChange: function onChange(e) {
+                                                    return _this2.setState({ password: e.target.value });
+                                                }, value: this.state.password })
+                                        ),
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'col-lg-12 loginbttm' },
+                                            _react2.default.createElement('div', { className: 'col-lg-6 login-btm login-text' }),
+                                            _react2.default.createElement(
+                                                'div',
+                                                { className: 'col-lg-6 login-btm login-button' },
+                                                _react2.default.createElement(
+                                                    'button',
+                                                    { type: 'submit', className: 'btn btn-outline-primary' },
+                                                    'LOGIN'
+                                                )
+                                            )
+                                        )
                                     )
                                 )
-                            )
+                            ),
+                            _react2.default.createElement('div', { className: 'col-lg-3 col-md-2' })
                         )
                     )
-                ),
-                _react2.default.createElement('div', { className: 'col-lg-3 col-md-2' })
-            )
-        )
-    );
-};
+                )
+            );
+        }
+    }]);
+
+    return Login;
+}(_react2.default.Component);
+
+;
 
 exports.default = Login;
 
@@ -2991,7 +3172,7 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _axios = __webpack_require__(9);
+var _axios = __webpack_require__(6);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -3465,8 +3646,8 @@ if (process.env.NODE_ENV !== "production") {
 'use strict';
 
 var React = __webpack_require__(2);
-var invariant = __webpack_require__(7);
-var warning = __webpack_require__(8);
+var invariant = __webpack_require__(8);
+var warning = __webpack_require__(9);
 var ExecutionEnvironment = __webpack_require__(16);
 var _assign = __webpack_require__(5);
 var emptyFunction = __webpack_require__(3);
@@ -19104,8 +19285,8 @@ if (process.env.NODE_ENV !== "production") {
 
 var _assign = __webpack_require__(5);
 var emptyObject = __webpack_require__(4);
-var invariant = __webpack_require__(7);
-var warning = __webpack_require__(8);
+var invariant = __webpack_require__(8);
+var warning = __webpack_require__(9);
 var emptyFunction = __webpack_require__(3);
 var checkPropTypes = __webpack_require__(21);
 

@@ -53,10 +53,9 @@ app.post('/signup', (req, res) => {
 // Post new idea
 app.post('/idea', (req, res) => {
     const newIdea = new Idea({
-        description: req.body.fname,
-        hashtags: req.body.lname,
-        owner: req.body.owner,
-        team: req.body.team
+        name: req.body.name,
+        description: req.body.description,
+        hashtags: req.body.hashtags
     });
 
     newIdea.save().then(response => {
